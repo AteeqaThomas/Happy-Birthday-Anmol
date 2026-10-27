@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff8f0">
+<title>Happy Birthday, Anmol</title>
+<style>
+  :root {
+    --ink: #2f2a3d; --muted: #716a7e; --rose: #d86d87;
+    --plum: #6c4b78; --cream: #fff8f0; --glass: rgba(255,255,255,.78);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; color: var(--ink);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at 12% 15%, #FF1A40 0, transparent 29%),
+                radial-gradient(circle at 90% 80%, #FF1A40 0, transparent 30%), var(--cream);
+    display: grid; place-items: center; padding: 24px; overflow-x: hidden;
+  }
+  .sparkle { position: fixed; pointer-events: none; opacity: .6; color: #c58c57; animation: float 7s ease-in-out infinite; }
+  .s1 { top: 9%; left: 8%; font-size: 28px; } .s2 { top: 18%; right: 9%; font-size: 21px; animation-delay: -2s; }
+  .s3 { bottom: 12%; left: 12%; font-size: 24px; animation-delay: -4s; } .s4 { bottom: 8%; right: 12%; font-size: 30px; animation-delay: -1s; }
+  @keyframes float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-13px) rotate(12deg); } }
+  .card {
+    width: min(760px, 100%); min-height: 610px; position: relative; overflow: hidden;
+    border: 1px solid rgba(255,255,255,.9); border-radius: 30px;
+    background: var(--glass); backdrop-filter: blur(16px);
+    box-shadow: 0 24px 80px rgba(73, 49, 71, .14);
+  }
+  .topline { display:flex; justify-content:space-between; align-items:center; padding: 22px 26px 0; gap: 12px; }
+  .brand { font-size: 12px; text-transform: uppercase; letter-spacing: .19em; color: var(--muted); font-weight: 750; }
+  .music {
+    border: 1px solid #ead7df; background: #fffafc; color: var(--plum); border-radius: 999px;
+    padding: 10px 14px; cursor:pointer; font-weight:700; font-size:12px; transition:.2s;
+  }
+  .music:hover, .navbtn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px #6c4b781c; }
+  .view { display:none; padding: 24px clamp(22px, 6vw, 54px) 34px; text-align:center; animation: arrive .5s ease both; }
+  .view.active { display:block; }
+  @keyframes arrive { from { opacity:0; transform:translateY(10px); } to {opacity:1; transform:translateY(0);} }
+  .hero-img { width:100%; height:300px; object-fit:cover; border-radius:22px; display:block; box-shadow:0 12px 32px #4e34421b; }
+  .intro-img { height:260px; }
+  .eyebrow { color:var(--rose); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.22em; margin:22px 0 9px; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size:clamp(40px, 7vw, 64px); line-height:1.02; font-weight:500; letter-spacing:-.04em; margin:0; }
+  h1 span { color:var(--rose); font-style:italic; }
+  h2 { font-family:Georgia, "Times New Roman", serif; font-size:clamp(29px, 5vw, 42px); font-weight:500; line-height:1.12; margin:16px 0 12px; }
+  p { color:var(--muted); line-height:1.8; font-size:16px; max-width:540px; margin: 12px auto; }
+  .open-btn, .navbtn {
+    border:0; border-radius:999px; padding:14px 23px; font-size:14px; font-weight:800; cursor:pointer;
+    transition: transform .2s, box-shadow .2s; color: white; background: #FF1A40;
+    box-shadow:0 10px 25px #9c577c33;
+  }
+  .open-btn { margin-top:20px; } .open-btn:hover { transform:translateY(-2px) scale(1.02); }
+  .bottom { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:24px; }
+  .dots { display:flex; gap:7px; align-items:center; }
+  .dot { width:7px; height:7px; border-radius:50%; background:#ddcbd4; transition:.25s; }
+  .dot.active { width:23px; border-radius:9px; background:var(--rose); }
+  .navbtn { padding:11px 17px; font-size:13px; }
+  .navbtn.secondary { background:#fff; color:var(--plum); border:1px solid #ead7df; box-shadow:none; }
+  .slide-count { font-size:12px; color:var(--muted); letter-spacing:.08em; }
+  .signature { color:var(--plum); font-family:Georgia,serif; font-style:italic; font-size:20px; margin-top:20px; }
+  .small-note { font-size:11px; color:#9a8c9c; margin-top:17px; }
+  @media (max-width: 520px) {
+    body { padding: 12px; min-height: 100svh; place-items: start center; }
+    .card { min-height: 0; border-radius: 23px; width: 100%; }
+    .topline { padding: 16px 15px 0; gap: 8px; flex-wrap: wrap; }
+    .brand { font-size: 10px; letter-spacing: .12em; }
+    .view { padding: 16px 15px 22px; }
+    .hero-img { height: clamp(170px, 52vw, 235px); border-radius: 17px; }
+    .intro-img { height: clamp(165px, 48vw, 220px); }
+    .eyebrow { font-size: 10px; letter-spacing: .15em; margin: 18px 0 8px; }
+    h1 { font-size: clamp(36px, 10vw, 52px); }
+    h2 { font-size: clamp(27px, 7.4vw, 36px); }
+    p { font-size: 15px; line-height: 1.7; }
+    .bottom { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .bottom .slide-count { flex: 1 1 100%; order: -1; }
+    .navbtn, .open-btn { min-height: 44px; padding: 12px 17px; }
+    .signature { font-size: 18px; }
+  }
+  @media (max-width: 360px) {
+    body { padding: 8px; }
+    .view { padding-inline: 12px; }
+    .topline { padding-inline: 12px; }
+    .navbtn { font-size: 12px; padding: 10px 12px; }
+    .brand { max-width: 145px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+  <span class="sparkle s1">✦</span><span class="sparkle s2">✧</span>
+  <span class="sparkle s3">✦</span><span class="sparkle s4">✧</span>
+  <main class="card" aria-label="Birthday greeting card for Anmol">
+   
+
+    <section class="view active" id="intro">
+      <img class="hero-img intro-img" src="img1.jfif" alt="Birthday cover image" style="background-position:center;">
+      <div class="eyebrow">A special note, just for you</div>
+      <h1>Happy Birthday,<br><span>Anmol</span></h1>
+      <p>For a beautiful soul with a brave heart, an independent spirit, and a way of finding wonder wherever life leads.</p>
+      <button class="open-btn" id="openBtn" type="button" style="background:#FF1A40;">Open your wishes <span aria-hidden="true">♡</span></button>
+      <div class="small-note">Made with warmth, admiration & a little sparkle</div>
+    </section>
+
+    <section class="view" data-slide="0">
+      <img class="hero-img" src="img3.jfif" alt="Nature photograph for the first birthday wish">
+      <div class="eyebrow">01 · Your brave heart</div>
+      <h2>Keep choosing the bold, beautiful path.</h2>
+      <p>Anmol, your courage and independence are such a beautiful kind of inspiration. May you always trust your own wings, follow your dreams fearlessly, and remember that you are capable of more than you imagine.</p>
+      <div class="bottom"><span class="slide-count">A wish for you</span><button class="navbtn next" type="button" style="background:#FF1A40">Next wish →</button></div>
+    </section>
+
+    <section class="view" data-slide="1">
+      <img class="hero-img" src="img5.jfif" alt="Nature photograph for the second birthday wish">
+      <div class="eyebrow">02 · Your adventurous soul</div>
+      <h2>May the world keep amazing you.</h2>
+      <p>May your days be filled with new places, unexpected adventures, quiet forests, open skies, and moments that make your heart say, “This is beautiful.” Never lose your curiosity or your gift for noticing nature’s little miracles.</p>
+      <div class="bottom"><button class="navbtn secondary prev" type="button">← Back</button><span class="slide-count">A wish for you</span><button class="navbtn next" type="button" style="background:#FF1A40">Next wish →</button></div>
+    </section>
+
+    <section class="view" data-slide="2">
+      <img class="hero-img" src="img7.jfif" alt="Nature photograph for the third birthday wish">
+      <div class="eyebrow">03 · Your grateful spirit</div>
+      <h2>May faith light every step.</h2>
+      <p>May God bless your journey with peace in your heart, wisdom in your choices, and strength when the road feels difficult. May you always find reasons to be grateful, beauty to admire, and blessings tucked into ordinary days.</p>
+      <div class="bottom"><button class="navbtn secondary prev" type="button">← Back</button><span class="slide-count">A wish for you</span><button class="navbtn next" type="button" style="background:#FF1A40">Final wish →</button></div>
+    </section>
+
+    <section class="view" data-slide="3">
+      <img class="hero-img" src="img1.jfif" alt="Birthday flowers and nature photograph">
+      <div class="eyebrow">04 · With the warmest wishes</div>
+      <h2>A year as lovely as your heart.</h2>
+      <p>Happy Birthday, dear Anmol! May you be blessed with lasting health, genuine happiness, success in everything meaningful to you, and people who celebrate the wonderful person you are. May every new chapter bring growth, love, peace, and beautiful surprises.</p>
+      <div class="signature">Keep shining, keep exploring, keep being you. ♡</div>
+      <div class="bottom"><button class="navbtn secondary prev" type="button">← Back</button><span class="slide-count">With love & best wishes</span><button class="navbtn" id="againBtn" type="button" style="background:#FF1A40">Read again ↻</button></div>
+    </section>
+  </main>
+
+<script>
+  const intro = document.getElementById('intro');
+  const slides = Array.from(document.querySelectorAll('[data-slide]'));
+  const openBtn = document.getElementById('openBtn');
+  const againBtn = document.getElementById('againBtn');
+  let current = -1;
+
+  function showView(index) {
+    intro.classList.toggle('active', index === -1);
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+    current = index;
+  }
+  openBtn.addEventListener('click', () => showView(0));
+  document.querySelectorAll('.next').forEach(btn => btn.addEventListener('click', () => showView(Math.min(current + 1, slides.length - 1))));
+  document.querySelectorAll('.prev').forEach(btn => btn.addEventListener('click', () => showView(Math.max(current - 1, 0))));
+  againBtn.addEventListener('click', () => showView(-1));
+
+</script>
+</body>
+</html>
